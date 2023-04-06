@@ -85,6 +85,11 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tRt-9x-vRL">
+                                <rect key="frame" x="20" y="211.66666666666666" width="353" height="34"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Input note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bW1-L9-Qfl">
                                 <rect key="frame" x="20" y="275.66666666666669" width="353" height="300.00000000000006"/>
                                 <constraints>
@@ -93,11 +98,14 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tRt-9x-vRL">
-                                <rect key="frame" x="20" y="211.66666666666666" width="353" height="34"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZj-W1-pKE">
+                                <rect key="frame" x="124.66666666666669" y="605.66666666666663" width="144" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="Save and return"/>
+                                <connections>
+                                    <action selector="pressSaveAndReturn:" destination="ekf-58-TVj" eventType="touchUpInside" id="mLE-fZ-X6h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kij-FR-kZa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -113,9 +121,16 @@
                             <constraint firstItem="qva-WZ-FuN" firstAttribute="centerX" secondItem="DDX-V7-qGb" secondAttribute="centerX" id="aTy-fm-Ru2"/>
                             <constraint firstItem="bW1-L9-Qfl" firstAttribute="top" secondItem="tRt-9x-vRL" secondAttribute="bottom" constant="30" id="cE2-vt-N7w"/>
                             <constraint firstItem="fmy-KL-fyq" firstAttribute="top" secondItem="kij-FR-kZa" secondAttribute="top" constant="20" id="cfB-5h-N00"/>
+                            <constraint firstItem="ZZj-W1-pKE" firstAttribute="centerX" secondItem="DDX-V7-qGb" secondAttribute="centerX" id="gga-ip-yaN"/>
+                            <constraint firstItem="ZZj-W1-pKE" firstAttribute="top" secondItem="bW1-L9-Qfl" secondAttribute="bottom" constant="30" id="n2g-8E-cyG"/>
                             <constraint firstItem="kij-FR-kZa" firstAttribute="trailing" secondItem="tRt-9x-vRL" secondAttribute="trailing" constant="20" id="pcz-pg-ZlQ"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="currentDateLbl" destination="tRt-9x-vRL" id="9gL-d7-dhw"/>
+                        <outlet property="noteLbl" destination="bW1-L9-Qfl" id="LsO-DS-j79"/>
+                        <outlet property="titleLbl" destination="qva-WZ-FuN" id="zXT-6Y-AEP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gP-og-d9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
