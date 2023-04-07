@@ -17,6 +17,7 @@
 		630F1D7929DCB04400E1A138 /* Notes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F1D7829DCB04400E1A138 /* Notes.swift */; };
 		630F1D7B29DCB88C00E1A138 /* NewRecordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F1D7A29DCB88C00E1A138 /* NewRecordViewController.swift */; };
 		630F1D7D29DCB8CA00E1A138 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 630F1D7C29DCB8CA00E1A138 /* TableViewController.swift */; };
+		631C1F0F29E076CE00ECFB0C /* NewRecordViewControllerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 631C1F0E29E076CE00ECFB0C /* NewRecordViewControllerDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,7 @@
 		630F1D7829DCB04400E1A138 /* Notes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notes.swift; sourceTree = "<group>"; };
 		630F1D7A29DCB88C00E1A138 /* NewRecordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecordViewController.swift; sourceTree = "<group>"; };
 		630F1D7C29DCB8CA00E1A138 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		631C1F0E29E076CE00ECFB0C /* NewRecordViewControllerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewRecordViewControllerDelegate.swift; sourceTree = "<group>"; };
 		AA628ADA2C5B7716BC81021C /* Pods_Realm_notifier.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Realm_notifier.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E0BF08503297C4C19B306E68 /* Pods-Realm notifier.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Realm notifier.debug.xcconfig"; path = "Target Support Files/Pods-Realm notifier/Pods-Realm notifier.debug.xcconfig"; sourceTree = "<group>"; };
 		F611A4ECB84541F788EAECA1 /* Pods-Realm notifier.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Realm notifier.release.xcconfig"; path = "Target Support Files/Pods-Realm notifier/Pods-Realm notifier.release.xcconfig"; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				630F1D7829DCB04400E1A138 /* Notes.swift */,
 				630F1D6829DCAD0200E1A138 /* Main.storyboard */,
 				630F1D7A29DCB88C00E1A138 /* NewRecordViewController.swift */,
+				631C1F0E29E076CE00ECFB0C /* NewRecordViewControllerDelegate.swift */,
 				630F1D6B29DCAD0300E1A138 /* Assets.xcassets */,
 				630F1D6D29DCAD0300E1A138 /* LaunchScreen.storyboard */,
 				630F1D7029DCAD0300E1A138 /* Info.plist */,
@@ -219,6 +222,7 @@
 				630F1D7D29DCB8CA00E1A138 /* TableViewController.swift in Sources */,
 				630F1D6329DCAD0200E1A138 /* AppDelegate.swift in Sources */,
 				630F1D6529DCAD0200E1A138 /* SceneDelegate.swift in Sources */,
+				631C1F0F29E076CE00ECFB0C /* NewRecordViewControllerDelegate.swift in Sources */,
 				630F1D7929DCB04400E1A138 /* Notes.swift in Sources */,
 				630F1D7B29DCB88C00E1A138 /* NewRecordViewController.swift in Sources */,
 			);

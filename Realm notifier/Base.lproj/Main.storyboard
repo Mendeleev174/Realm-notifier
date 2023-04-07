@@ -66,7 +66,7 @@
             </objects>
             <point key="canvasLocation" x="1895.4198473282443" y="-27.464788732394368"/>
         </scene>
-        <!--New Record View Controller-->
+        <!--New record-->
         <scene sceneID="AOg-A3-WdX">
             <objects>
                 <viewController storyboardIdentifier="NewVC" id="ekf-58-TVj" customClass="NewRecordViewController" customModule="Realm_notifier" customModuleProvider="target" sceneMemberID="viewController">
@@ -74,67 +74,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="New record" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fmy-KL-fyq">
-                                <rect key="frame" x="130.33333333333337" y="79" width="132.66666666666663" height="28.666666666666671"/>
-                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="24"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Input title" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qva-WZ-FuN">
-                                <rect key="frame" x="20" y="147.66666666666666" width="353" height="34"/>
+                                <rect key="frame" x="20" y="133" width="353" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Current date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="tRt-9x-vRL">
-                                <rect key="frame" x="20" y="211.66666666666666" width="353" height="34"/>
+                                <rect key="frame" x="20" y="197" width="353" height="34"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Input note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bW1-L9-Qfl">
-                                <rect key="frame" x="20" y="275.66666666666669" width="353" height="300.00000000000006"/>
+                                <rect key="frame" x="20" y="275" width="353" height="300"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="300" id="swA-F1-GMb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZZj-W1-pKE">
-                                <rect key="frame" x="124.66666666666669" y="605.66666666666663" width="144" height="35"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="Save and return"/>
-                                <connections>
-                                    <action selector="pressSaveAndReturn:" destination="ekf-58-TVj" eventType="touchUpInside" id="mLE-fZ-X6h"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mmO-Wx-edZ">
+                                <rect key="frame" x="20" y="246" width="29" height="14"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="12"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kij-FR-kZa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="mmO-Wx-edZ" firstAttribute="leading" secondItem="kij-FR-kZa" secondAttribute="leading" constant="20" id="0ag-Pa-Fkt"/>
                             <constraint firstItem="kij-FR-kZa" firstAttribute="trailing" secondItem="qva-WZ-FuN" secondAttribute="trailing" constant="20" id="1NO-7a-0TZ"/>
                             <constraint firstItem="qva-WZ-FuN" firstAttribute="leading" secondItem="kij-FR-kZa" secondAttribute="leading" constant="20" id="1s8-za-Ec3"/>
                             <constraint firstItem="kij-FR-kZa" firstAttribute="trailing" secondItem="bW1-L9-Qfl" secondAttribute="trailing" constant="20" id="5QE-4J-1Vc"/>
                             <constraint firstItem="tRt-9x-vRL" firstAttribute="leading" secondItem="kij-FR-kZa" secondAttribute="leading" constant="20" id="7mY-Oi-Fbk"/>
-                            <constraint firstItem="fmy-KL-fyq" firstAttribute="centerX" secondItem="DDX-V7-qGb" secondAttribute="centerX" id="CIe-s2-cX7"/>
-                            <constraint firstItem="qva-WZ-FuN" firstAttribute="top" secondItem="fmy-KL-fyq" secondAttribute="bottom" constant="40" id="JkQ-2O-YZl"/>
+                            <constraint firstItem="mmO-Wx-edZ" firstAttribute="top" secondItem="tRt-9x-vRL" secondAttribute="bottom" constant="15" id="G84-Q6-3zz"/>
+                            <constraint firstItem="qva-WZ-FuN" firstAttribute="top" secondItem="kij-FR-kZa" secondAttribute="top" constant="30" id="JAt-FB-gNG"/>
                             <constraint firstItem="tRt-9x-vRL" firstAttribute="top" secondItem="qva-WZ-FuN" secondAttribute="bottom" constant="30" id="QA1-VS-sS0"/>
                             <constraint firstItem="bW1-L9-Qfl" firstAttribute="leading" secondItem="kij-FR-kZa" secondAttribute="leading" constant="20" id="SIC-sg-5SK"/>
                             <constraint firstItem="qva-WZ-FuN" firstAttribute="centerX" secondItem="DDX-V7-qGb" secondAttribute="centerX" id="aTy-fm-Ru2"/>
-                            <constraint firstItem="bW1-L9-Qfl" firstAttribute="top" secondItem="tRt-9x-vRL" secondAttribute="bottom" constant="30" id="cE2-vt-N7w"/>
-                            <constraint firstItem="fmy-KL-fyq" firstAttribute="top" secondItem="kij-FR-kZa" secondAttribute="top" constant="20" id="cfB-5h-N00"/>
-                            <constraint firstItem="ZZj-W1-pKE" firstAttribute="centerX" secondItem="DDX-V7-qGb" secondAttribute="centerX" id="gga-ip-yaN"/>
-                            <constraint firstItem="ZZj-W1-pKE" firstAttribute="top" secondItem="bW1-L9-Qfl" secondAttribute="bottom" constant="30" id="n2g-8E-cyG"/>
+                            <constraint firstItem="bW1-L9-Qfl" firstAttribute="top" secondItem="mmO-Wx-edZ" secondAttribute="bottom" constant="15" id="hOK-ai-nfF"/>
                             <constraint firstItem="kij-FR-kZa" firstAttribute="trailing" secondItem="tRt-9x-vRL" secondAttribute="trailing" constant="20" id="pcz-pg-ZlQ"/>
                         </constraints>
                     </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="New record" id="4mR-75-Nw6">
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="BZ5-Qg-4dN">
+                            <connections>
+                                <action selector="pressSaveOrUpdate:" destination="ekf-58-TVj" id="gU3-xD-gli"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                     <connections>
+                        <outlet property="characterCounter" destination="mmO-Wx-edZ" id="28O-iM-I22"/>
                         <outlet property="currentDateLbl" destination="tRt-9x-vRL" id="9gL-d7-dhw"/>
                         <outlet property="noteLbl" destination="bW1-L9-Qfl" id="LsO-DS-j79"/>
+                        <outlet property="saveOrUpdateLbl" destination="BZ5-Qg-4dN" id="qWh-CH-dDn"/>
                         <outlet property="titleLbl" destination="qva-WZ-FuN" id="zXT-6Y-AEP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9gP-og-d9v" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2812.9770992366412" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="2828" y="-27"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="3Rw-Ed-cbN">
@@ -146,6 +147,9 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VOn-JY-XEY">
+                        <autoresizingMask key="autoresizingMask"/>
+                    </toolbar>
                     <connections>
                         <segue destination="cFR-TD-Ijc" kind="relationship" relationship="rootViewController" id="035-yH-XUj"/>
                     </connections>

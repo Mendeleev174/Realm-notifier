@@ -10,6 +10,7 @@ import RealmSwift
 
 class TableViewController: UITableViewController {
 
+    // Нажатие на кнопку добавления записи
     @IBAction func PressAdd(_ sender: UIBarButtonItem) {
         let addVC = storyboard?.instantiateViewController(withIdentifier: "NewVC")
         let addVC2 = addVC as! NewRecordViewController
@@ -17,8 +18,10 @@ class TableViewController: UITableViewController {
         navigationController?.pushViewController(addVC2, animated: true)
     }
     
+    // Создаём объект базы данных
     let realm = try! Realm()
     
+    // viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -27,24 +30,28 @@ class TableViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        // Выводим кнопку редактирования
+        navigationItem.leftBarButtonItem = editButtonItem
         
+        // получаем и печатаем директорию документов в песочнице приложения
 //        print(NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true))
     }
 
     // MARK: - Table view data source
 
+    // Количество секций в таблице
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
+    // Количество строк в секции
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return realm.objects(Notes.self).count
     }
 
-    
+    // Заполняем ячейку данными
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ListCell", for: indexPath)
 
@@ -58,14 +65,15 @@ class TableViewController: UITableViewController {
 
     
     // Override to support conditional editing of the table view.
+    // Разрешаем редактирование ячеек в таблице
     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
         return true
     }
     
-
     
     // Override to support editing the table view.
+    // Обрабатываем стиль выбранного редактирования ячейки
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
@@ -80,6 +88,7 @@ class TableViewController: UITableViewController {
         }    
     }
     
+    // Обрабатываем нажатие на конкретную ячейку
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let addVC = storyboard?.instantiateViewController(withIdentifier: "NewVC")
         let addVC2 = addVC as! NewRecordViewController
@@ -116,8 +125,11 @@ class TableViewController: UITableViewController {
 
 }
 
+//  MARK: - Методы делегата NewRecordViewControllerDelegate
+
 extension TableViewController: NewRecordViewControllerDelegate {
     
+    // Сохраняем новую запись в базу данных
     func saveNewRecord(_ objectToSave: Notes) {
         try! realm.write {
             realm.add(objectToSave)
@@ -125,6 +137,7 @@ extension TableViewController: NewRecordViewControllerDelegate {
         tableView.reloadData()
     }
     
+    // Обновляем выбранную запись в базу данных
     func updateRecord(titleToUpdate text: String, noteToUpdate note: String?, sender objectToUpdate: Notes) {
         try! realm.write {
             objectToUpdate.name = text
