@@ -84,20 +84,22 @@
                                 <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="top" borderStyle="roundedRect" placeholder="Input note" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bW1-L9-Qfl">
-                                <rect key="frame" x="20" y="275" width="353" height="300"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="swA-F1-GMb"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="mmO-Wx-edZ">
                                 <rect key="frame" x="20" y="246" width="29" height="14"/>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-LightItalic" family="Helvetica Neue" pointSize="12"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="dKg-BL-brp">
+                                <rect key="frame" x="20" y="275" width="353" height="300"/>
+                                <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="300" id="U92-oc-DAX"/>
+                                </constraints>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="kij-FR-kZa"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -105,14 +107,14 @@
                             <constraint firstItem="mmO-Wx-edZ" firstAttribute="leading" secondItem="kij-FR-kZa" secondAttribute="leading" constant="20" id="0ag-Pa-Fkt"/>
                             <constraint firstItem="kij-FR-kZa" firstAttribute="trailing" secondItem="qva-WZ-FuN" secondAttribute="trailing" constant="20" id="1NO-7a-0TZ"/>
                             <constraint firstItem="qva-WZ-FuN" firstAttribute="leading" secondItem="kij-FR-kZa" secondAttribute="leading" constant="20" id="1s8-za-Ec3"/>
-                            <constraint firstItem="kij-FR-kZa" firstAttribute="trailing" secondItem="bW1-L9-Qfl" secondAttribute="trailing" constant="20" id="5QE-4J-1Vc"/>
                             <constraint firstItem="tRt-9x-vRL" firstAttribute="leading" secondItem="kij-FR-kZa" secondAttribute="leading" constant="20" id="7mY-Oi-Fbk"/>
+                            <constraint firstItem="dKg-BL-brp" firstAttribute="top" secondItem="mmO-Wx-edZ" secondAttribute="bottom" constant="15" id="FVi-EE-HnQ"/>
                             <constraint firstItem="mmO-Wx-edZ" firstAttribute="top" secondItem="tRt-9x-vRL" secondAttribute="bottom" constant="15" id="G84-Q6-3zz"/>
                             <constraint firstItem="qva-WZ-FuN" firstAttribute="top" secondItem="kij-FR-kZa" secondAttribute="top" constant="30" id="JAt-FB-gNG"/>
                             <constraint firstItem="tRt-9x-vRL" firstAttribute="top" secondItem="qva-WZ-FuN" secondAttribute="bottom" constant="30" id="QA1-VS-sS0"/>
-                            <constraint firstItem="bW1-L9-Qfl" firstAttribute="leading" secondItem="kij-FR-kZa" secondAttribute="leading" constant="20" id="SIC-sg-5SK"/>
+                            <constraint firstItem="kij-FR-kZa" firstAttribute="trailing" secondItem="dKg-BL-brp" secondAttribute="trailing" constant="20" id="RQL-BR-65E"/>
+                            <constraint firstItem="dKg-BL-brp" firstAttribute="leading" secondItem="kij-FR-kZa" secondAttribute="leading" constant="20" id="Wom-n1-iD8"/>
                             <constraint firstItem="qva-WZ-FuN" firstAttribute="centerX" secondItem="DDX-V7-qGb" secondAttribute="centerX" id="aTy-fm-Ru2"/>
-                            <constraint firstItem="bW1-L9-Qfl" firstAttribute="top" secondItem="mmO-Wx-edZ" secondAttribute="bottom" constant="15" id="hOK-ai-nfF"/>
                             <constraint firstItem="kij-FR-kZa" firstAttribute="trailing" secondItem="tRt-9x-vRL" secondAttribute="trailing" constant="20" id="pcz-pg-ZlQ"/>
                         </constraints>
                     </view>
@@ -128,7 +130,7 @@
                     <connections>
                         <outlet property="characterCounter" destination="mmO-Wx-edZ" id="28O-iM-I22"/>
                         <outlet property="currentDateLbl" destination="tRt-9x-vRL" id="9gL-d7-dhw"/>
-                        <outlet property="noteLbl" destination="bW1-L9-Qfl" id="LsO-DS-j79"/>
+                        <outlet property="noteLbl" destination="dKg-BL-brp" id="GKK-Ns-F05"/>
                         <outlet property="saveOrUpdateLbl" destination="BZ5-Qg-4dN" id="qWh-CH-dDn"/>
                         <outlet property="titleLbl" destination="qva-WZ-FuN" id="zXT-6Y-AEP"/>
                     </connections>
@@ -162,8 +164,14 @@
     <resources>
         <image name="note.text" catalog="system" width="128" height="107"/>
         <image name="note.text.badge.plus" catalog="system" width="128" height="108"/>
+        <systemColor name="labelColor">
+            <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

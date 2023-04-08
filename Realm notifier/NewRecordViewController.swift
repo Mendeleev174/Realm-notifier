@@ -8,13 +8,13 @@
 import UIKit
 import RealmSwift
 
-class NewRecordViewController: UIViewController, UITextFieldDelegate {
+class NewRecordViewController: UIViewController, UITextViewDelegate {
     
     @IBOutlet weak var titleLbl: UITextField!
     
     @IBOutlet weak var currentDateLbl: UITextField!
     
-    @IBOutlet weak var noteLbl: UITextField!
+    @IBOutlet weak var noteLbl: UITextView!
     
     @IBOutlet weak var characterCounter: UILabel!
     
@@ -23,11 +23,17 @@ class NewRecordViewController: UIViewController, UITextFieldDelegate {
     // Нажатие на кнопку "Save" / "Update"
     @IBAction func pressSaveOrUpdate(_ sender: UIBarButtonItem) {
         if isUpdate {
-            guard titleLbl.text?.count != 0 else { return }
+            guard titleLbl.text?.count != 0 else {
+                zeroTitleAlert(sender)
+                return
+            }
             delegate?.updateRecord(titleToUpdate: titleLbl.text!, noteToUpdate: noteLbl.text, sender: realmObject!)
             navigationController?.popViewController(animated: true)
         } else {
-            guard readyToSave() else { return }
+            guard readyToSave() else {
+                zeroTitleAlert(sender)
+                return
+            }
             delegate?.saveNewRecord(realmObject!)
             navigationController?.popViewController(animated: true)
         }
@@ -72,14 +78,14 @@ class NewRecordViewController: UIViewController, UITextFieldDelegate {
             realmObject = Notes()
             realmObject?.date = NSDate()
             currentDateLbl.text = NSDate().description
-            textFieldDidChangeSelection(noteLbl)
+            textViewDidChangeSelection(noteLbl)
             return }
         titleLbl.text = objToFill.name
         currentDateLbl.text = objToFill.date.description
         noteLbl.text = objToFill.text
         navigationItem.title = "Update record"
         saveOrUpdateLbl.title = "Update"
-        textFieldDidChangeSelection(noteLbl)
+        textViewDidChangeSelection(noteLbl)
     }
     
     // Готовы ли сохранить новый объект
@@ -92,10 +98,19 @@ class NewRecordViewController: UIViewController, UITextFieldDelegate {
         return false
     }
 
-    // MARK: - Методы UITextFieldDelegate
+    // Alert о невозможности сохранения записи по причине отсутствия заголовка
+    func zeroTitleAlert(_ sender: UIBarButtonItem) {
+        let buttonTitle = sender.title!
+        let alert = UIAlertController(title: "\(buttonTitle) alert", message: "Record should contain title", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default)
+        alert.addAction(okAction)
+        present(alert, animated: true)
+    }
     
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        characterCounter.text = textField.text?.count.description
+    // MARK: - Методы UITextViewDelegate
+
+    func textViewDidChangeSelection(_ textView: UITextView) {
+        characterCounter.text = textView.text?.count.description
         characterCounter.text! += " characters"
     }
     
