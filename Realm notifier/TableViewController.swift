@@ -57,11 +57,14 @@ class TableViewController: UITableViewController {
 
         let realmObjects = realm.objects(Notes.self)
         cell.textLabel?.text = realmObjects[indexPath.row].name
-        cell.detailTextLabel?.text = realmObjects[indexPath.row].date.description
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy, hh:mm"
+        dateFormatter.timeZone = .current
+        cell.detailTextLabel!.text = dateFormatter.string(from: realmObjects[indexPath.row].date as Date)
 
         return cell
     }
-    
 
     
     // Override to support conditional editing of the table view.

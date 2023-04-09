@@ -76,12 +76,24 @@ class NewRecordViewController: UIViewController, UITextViewDelegate {
         
         guard let objToFill = realmObject else {
             realmObject = Notes()
+    
+            // Вставка текущей даты и времени для НОВОЙ записи
             realmObject?.date = NSDate()
-            currentDateLbl.text = NSDate().description
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateFormat = "dd.MM.yyyy, hh:mm"
+            dateFormatter.timeZone = .current
+            currentDateLbl.text = dateFormatter.string(from: realmObject!.date as Date)
+            
             textViewDidChangeSelection(noteLbl)
             return }
         titleLbl.text = objToFill.name
-        currentDateLbl.text = objToFill.date.description
+        
+        // Вставка текущей даты и времени из СУЩЕСТВУЮЩЕЙ записи
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd.MM.yyyy, hh:mm"
+        dateFormatter.timeZone = .current
+        currentDateLbl.text = dateFormatter.string(from: objToFill.date as Date)
+        
         noteLbl.text = objToFill.text
         navigationItem.title = "Update record"
         saveOrUpdateLbl.title = "Update"
